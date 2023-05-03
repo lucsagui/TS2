@@ -7,10 +7,11 @@ namespace TS2_Test
     {
         Pessoa pessoa;
         [SetUp]
-            public void SteUp()
+        public void SteUp()
         {
             pessoa = new Pessoa();
         }
+       
 
         [Test]
         public void PessoaDeMaior()
@@ -28,6 +29,20 @@ namespace TS2_Test
         }
         // => 18 ok <=17 false
 
+        [Test]
+        public void retornaTamanhoTexto()
+        {
+            // arrange
+            Pessoa pessoa;
+            string entrada = "casa";
+            
+            // act
+            int resultadodoprograma = pessoa.retornaTamanhoTexto(entrada);
+            int resultadoExperado = 4;
 
+            // assert
+            Assert.AreEqual(resultadoExperado, resultadodoprograma);
+
+        }
     }
 }
